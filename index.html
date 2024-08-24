@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#addProduct" onclick="showSection('addProductSection')">Add Product</a></li>
+            <li><a href="#productList" onclick="showSection('productListSection')">View Products</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div id="addProductSection" class="section">
+            <h1>Add New Product</h1>
+            <form id="productForm" onsubmit="addProduct(event)">
+                <input type="text" id="name" placeholder="Product Name" required>
+                <textarea id="description" placeholder="Product Description"></textarea>
+                <input type="number" id="quantity" placeholder="Quantity" required>
+                <select id="category" required>
+                    <option value="">Select Category</option>
+                </select>
+                <input type="text" id="newCategory" placeholder="New Category Name">
+                <button type="button" id="addCategoryBtn" onclick="addCategory()">Add New Category</button>
+                <input type="file" accept="image/*" id="image">
+                <input type="number" id="purchaseCost" placeholder="Purchase Cost" required>
+                <input type="number" id="salePrice" placeholder="Sale Price" required>
+                <div id="vendorSection">
+                    <h3>Vendor (Optional)</h3>
+                    <input type="text" id="vendorName" placeholder="Vendor Name">
+                    <input type="file" accept="image/*" id="vendorLogo">
+                    <input type="url" id="vendorUrl" placeholder="Vendor URL (Optional)">
+                    <input type="tel" id="vendorPhone" placeholder="Vendor Phone">
+                    <input type="email" id="vendorEmail" placeholder="Vendor Email">
+                    <textarea id="vendorAddress" placeholder="Vendor Address"></textarea>
+                </div>
+                <button type="submit">Add Product</button>
+            </form>
+            <div id="successPopup" class="popup" style="display: none;">Product added successfully!</div>
+        </div>
+
+        <div id="productListSection" class="section" style="display: none;">
+            <h1>Product List</h1>
+            <div id="productList"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#addProduct" onclick="showSection('addProductSection')">Add Product</a></li>
+            <li><a href="#productList" onclick="showSection('productListSection')">View Products</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div id="addProductSection" class="section">
+            <h1>Add New Product</h1>
+            <form id="productForm" onsubmit="addProduct(event)">
+                <input type="text" id="name" placeholder="Product Name" required>
+                <textarea id="description" placeholder="Product Description"></textarea>
+                <input type="number" id="quantity" placeholder="Quantity" required>
+                <select id="category" required>
+                    <option value="">Select Category</option>
+                </select>
+                <input type="text" id="newCategory" placeholder="New Category Name">
+                <button type="button" id="addCategoryBtn" onclick="addCategory()">Add New Category</button>
+                <input type="file" accept="image/*" id="image" required>
+                <input type="number" id="purchaseCost" placeholder="Purchase Cost" required>
+                <input type="number" id="salePrice" placeholder="Sale Price" required>
+                <div id="vendorSection">
+                    <h3>Vendor (Optional)</h3>
+                    <input type="text" id="vendorName" placeholder="Vendor Name">
+                    <input type="file" accept="image/*" id="vendorLogo">
+                    <input type="url" id="vendorUrl" placeholder="Vendor URL (Optional)">
+                    <input type="tel" id="vendorPhone" placeholder="Vendor Phone">
+                    <input type="email" id="vendorEmail" placeholder="Vendor Email">
+                    <textarea id="vendorAddress" placeholder="Vendor Address"></textarea>
+                </div>
+                <button type="submit">Add Product</button>
+            </form>
+            <div id="successPopup" class="popup" style="display: none;">Product added successfully!</div>
+        </div>
+
+        <div id="productListSection" class="section" style="display: none;">
+            <h1>Product List</h1>
+            <div id="productList"></div>
+        </div>
+<!--
+ Modal for image preview -->
+         <!-- <div id="modal" class="modal" style="display: none;">
+            <span id="closeModal" class="close">&times;</span>
+            <img id="modalImage" class="modal-content" alt="Image Preview">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> -->
